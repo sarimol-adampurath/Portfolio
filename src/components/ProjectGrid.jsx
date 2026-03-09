@@ -4,13 +4,13 @@ const projects = [
   {
     name: 'Nachhaltigkeits Manager',
     summary: 'Sustainability management platform for tracking and optimizing environmental impact.',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
+    tags: ['React', 'DRF API', 'PostgreSQL'],
     link: 'https://nachhaltigkeits-manager.onrender.com',
   },
   {
     name: 'Paws and Snaps',
     summary: 'Social platform for pet lovers to share photos, stories, and connect with other pet owners.',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    tags: ['React', 'DRF API', 'PostgreSQL'],
     link: 'https://paws-and-snaps.onrender.com/',
   },
   {
@@ -21,7 +21,7 @@ const projects = [
   },
   {
     name: 'Swarna Jewellery',
-    summary: 'Luxury jewelry e-commerce platform showcasing exquisite designs and precious collections.',
+    summary: 'Professional landing page for a luxury jewelry brand, showcasing collections and client information.',
     tags: ['React', 'Node.js', 'Netlify'],
     link: 'https://swarna-jewellery.netlify.app/',
   },
