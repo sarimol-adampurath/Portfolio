@@ -3,11 +3,11 @@ import FadeInOnScroll from './FadeInOnScroll'
 const stackGroups = [
   {
     title: 'Frontend',
-    items: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    items: ['React', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'Vite'],
   },
   {
     title: 'Backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'PostgreSQL'],
+    items: ['Django', 'Python', 'REST APIs', 'PostgreSQL'],
   },
   {
     title: 'DevOps & Quality',
