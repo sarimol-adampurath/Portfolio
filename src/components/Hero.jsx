@@ -23,7 +23,7 @@ function Hero() {
             </span>
           </h1>
           <p className="max-w-xl text-base text-slate-300 md:text-lg">
-            Engineering high-performance interfaces and resilient frontend architectures for ambitious products.
+            Developing high-performance interfaces and resilient frontend architectures for ambitious products.
           </p>
         </div>
       </FadeInOnScroll>

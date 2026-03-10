@@ -17,7 +17,7 @@ const stackGroups = [
 
 function StackSection() {
   return (
-    <section id="stack" className="mx-auto min-h-screen w-full max-w-6xl scroll-mt-24 px-6 py-24 lg:px-10">
+    <section id="stack" className="mx-auto min-h-[80vh] w-full max-w-6xl scroll-mt-24 px-6 py-24 lg:px-10">
       <FadeInOnScroll className="mb-10">
         <h2 className="text-2xl font-bold text-slate-100 md:text-3xl">Tech Stack</h2>
         <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">

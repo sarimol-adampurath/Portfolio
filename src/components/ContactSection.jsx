@@ -1,6 +1,34 @@
+import { useState } from 'react'
 import FadeInOnScroll from './FadeInOnScroll'
 
+const initialFormState = {
+  name: '',
+  email: '',
+  message: '',
+}
+
 function ContactSection() {
+  const [formData, setFormData] = useState(initialFormState)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const subject = encodeURIComponent(`Portfolio inquiry from ${formData.name}`)
+
+    window.location.href = `mailto:sarimoladampurath@gmail.com?subject=${subject}`
+
+    setFormData(initialFormState)
+  }
+
   return (
     <section id="contact" className="mx-auto min-h-screen w-full max-w-6xl scroll-mt-24 px-6 py-24 lg:px-10">
       <FadeInOnScroll className="mb-10">
@@ -11,7 +39,10 @@ function ContactSection() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={0.06}>
-        <form className="rounded-xl border border-[#1E293B] bg-[#111A2E] p-6 md:p-8">
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-xl border border-[#1E293B] bg-[#111A2E] p-6 md:p-8"
+        >
           <div className="grid gap-5 md:grid-cols-2">
             <div className="md:col-span-1">
               <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-200">
@@ -21,6 +52,10 @@ function ContactSection() {
                 id="name"
                 name="name"
                 type="text"
+                value={formData.name}
+                onChange={handleChange}
+                autoComplete="name"
+                required
                 placeholder="Your name"
                 className="w-full rounded-md border border-[#1E293B] bg-[#0B1120] px-3 py-2.5 text-sm text-slate-100 outline-none transition-colors duration-200 placeholder:text-slate-500 focus:border-[#38BDF8]"
               />
@@ -34,6 +69,10 @@ function ContactSection() {
                 id="email"
                 name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
+                autoComplete="email"
+                required
                 placeholder="you@example.com"
                 className="w-full rounded-md border border-[#1E293B] bg-[#0B1120] px-3 py-2.5 text-sm text-slate-100 outline-none transition-colors duration-200 placeholder:text-slate-500 focus:border-[#38BDF8]"
               />
@@ -47,6 +86,9 @@ function ContactSection() {
                 id="message"
                 name="message"
                 rows={6}
+                value={formData.message}
+                onChange={handleChange}
+                required
                 placeholder="Tell me about your idea..."
                 className="w-full resize-none rounded-md border border-[#1E293B] bg-[#0B1120] px-3 py-2.5 text-sm text-slate-100 outline-none transition-colors duration-200 placeholder:text-slate-500 focus:border-[#38BDF8]"
               />

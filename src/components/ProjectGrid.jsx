@@ -11,7 +11,7 @@ const projects = [
     name: 'Paws and Snaps',
     summary: 'Social platform for pet lovers to share photos, stories, and connect with other pet owners.',
     tags: ['React', 'DRF API', 'PostgreSQL'],
-    link: 'https://paws-and-snaps.onrender.com/',
+    link: 'https://paws-and-snaps-clh3-e70gcplq7-sarimol-adampuraths-projects.vercel.app/',
   },
   {
     name: 'Bite Buzz',
