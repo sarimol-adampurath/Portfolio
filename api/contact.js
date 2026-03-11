@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = 'sarimoladampurath@gmail.com'
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'sarimoladampurath@gmail.com'
 const DEFAULT_FROM_EMAIL = 'Portfolio Contact <onboarding@resend.dev>'
 
 function escapeHtml(value) {
