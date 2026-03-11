@@ -31,3 +31,80 @@ body {
   background-color: #0B1120;
   color: #E2E8F0;
 }
+
+@keyframes border-sweep {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes text-sweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes icon-sweep {
+  0% {
+    color: #38bdf8;
+  }
+  50% {
+    color: #7dd3fc;
+  }
+  100% {
+    color: #818cf8;
+  }
+}
+
+.animated-text-sweep {
+  background-image: linear-gradient(120deg, #38BDF8 0%, #7DD3FC 40%, #818CF8 70%, #38BDF8 100%);
+  background-size: 220% 220%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-sweep 3.2s linear infinite alternate;
+}
+
+.animated-icon-sweep {
+  color: #38bdf8;
+  animation: icon-sweep 3.2s linear infinite alternate;
+}
+
+.animated-border-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.animated-border-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0) 10%, rgba(56, 189, 248, 0.85) 45%, rgba(125, 211, 252, 1) 50%, rgba(56, 189, 248, 0.85) 55%, rgba(56, 189, 248, 0) 90%);
+  background-size: 220% 220%;
+  background-position: 0% 0%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.animated-border-card:hover::before {
+  opacity: 1;
+  animation: border-sweep 1.1s linear infinite alternate;
+}
+
+.animated-border-always::before {
+  opacity: 1;
+  animation: border-sweep 2s linear infinite alternate;
+}
